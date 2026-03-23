@@ -1,4 +1,4 @@
-# Project 2: HPLC Column QC Statistical Analysis
+# HPLC Column QC Statistical Analysis
 ## Role Relevance: RiKi Global Data Analyst (Lifescience Focus)
 
 ### Objective
