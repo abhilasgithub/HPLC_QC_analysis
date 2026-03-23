@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HR Attrition Dashboard</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f5f7fa; }
+    header { background: linear-gradient(135deg, #1a1a2e, #e74c3c); color: white; padding: 20px 30px; }
+    header h1 { font-size: 24px; } header p { font-size: 13px; opacity: 0.8; margin-top: 4px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 20px 30px; }
+    .kpi { background: white; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .kpi .val { font-size: 28px; font-weight: bold; } .kpi .lbl { font-size: 13px; color: #777; margin-top: 4px; }
+    .red { color: #e74c3c; } .green { color: #2ecc71; } .blue { color: #3498db; } .orange { color: #f39c12; }
+    .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 0 30px 30px; }
+    .card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .card h3 { font-size: 15px; margin-bottom: 14px; color: #444; }
+    canvas { max-height: 240px; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>👥 HR Attrition Analytics Dashboard</h1>
+  <p>Data Analyst Project | Python • R • SQL • JavaScript</p>
+</header>
+
+<div class="kpi-grid">
+  <div class="kpi"><div class="val red">45%</div><div class="lbl">Attrition Rate</div></div>
+  <div class="kpi"><div class="val blue">20</div><div class="lbl">Total Employees</div></div>
+  <div class="kpi"><div class="val orange">₹42K</div><div class="lbl">Avg Income (Left)</div></div>
+  <div class="kpi"><div class="val green">₹82K</div><div class="lbl">Avg Income (Stayed)</div></div>
+</div>
+
+<div class="charts">
+  <div class="card"><h3>🏢 Attrition Rate by Department</h3><canvas id="dept"></canvas></div>
+  <div class="card"><h3>⏰ Overtime Impact on Attrition</h3><canvas id="overtime"></canvas></div>
+  <div class="card"><h3>😊 Job Satisfaction vs Attrition</h3><canvas id="satisfaction"></canvas></div>
+  <div class="card"><h3>👫 Attrition by Gender</h3><canvas id="gender"></canvas></div>
+</div>
+
+<script>
+new Chart(document.getElementById('dept'), {
+  type: 'bar',
+  data: { labels: ['Sales','HR','Research','Finance','IT'],
+    datasets: [{ label: 'Attrition Rate (%)', data: [71, 67, 33, 20, 14],
+      backgroundColor: ['#e74c3c','#e67e22','#f1c40f','#2ecc71','#3498db'], borderRadius: 6 }] },
+  options: { responsive: true, plugins: { legend: { display: false } },
+    scales: { y: { max: 100, ticks: { callback: v => v + '%' } } } }
+});
+
+new Chart(document.getElementById('overtime'), {
+  type: 'doughnut',
+  data: { labels: ['Overtime - Attrited', 'Overtime - Stayed', 'No OT - Stayed'],
+    datasets: [{ data: [8, 3, 9], backgroundColor: ['#e74c3c','#f39c12','#2ecc71'] }] },
+  options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+});
+
+new Chart(document.getElementById('satisfaction'), {
+  type: 'line',
+  data: { labels: ['1 (Low)','2','3','4 (High)'],
+    datasets: [{ label: 'Attrition Rate (%)', data: [100, 75, 33, 0],
+      borderColor: '#e74c3c', backgroundColor: 'rgba(231,76,60,0.1)',
+      fill: true, tension: 0.4, pointRadius: 6 }] },
+  options: { responsive: true, scales: { y: { max: 110, ticks: { callback: v => v + '%' } } } }
+});
+
+new Chart(document.getElementById('gender'), {
+  type: 'bar',
+  data: { labels: ['Male', 'Female'],
+    datasets: [
+      { label: 'Attrited', data: [5, 4], backgroundColor: '#e74c3c', borderRadius: 4 },
+      { label: 'Retained', data: [6, 5], backgroundColor: '#2ecc71', borderRadius: 4 }
+    ]},
+  options: { responsive: true, scales: { x: { stacked: false }, y: { stacked: false } } }
+});
+</script>
+</body>
+</html>

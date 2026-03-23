@@ -1,0 +1,21 @@
+emp_id,age,department,job_role,gender,education,monthly_income,years_at_company,job_satisfaction,work_life_balance,overtime,attrition
+E001,32,Sales,Sales Executive,Male,Bachelor,45000,3,3,2,Yes,Yes
+E002,45,Research,Scientist,Female,Master,82000,10,4,3,No,No
+E003,28,HR,HR Executive,Female,Bachelor,38000,2,2,1,Yes,Yes
+E004,36,IT,Developer,Male,Master,75000,7,4,4,No,No
+E005,29,Sales,Sales Rep,Male,Bachelor,42000,1,2,2,Yes,Yes
+E006,41,Finance,Analyst,Female,Master,68000,9,3,3,No,No
+E007,26,HR,Recruiter,Female,Bachelor,35000,1,1,1,Yes,Yes
+E008,38,IT,Manager,Male,PhD,95000,12,4,4,No,No
+E009,31,Sales,Sales Executive,Female,Bachelor,44000,4,3,3,Yes,No
+E010,27,Research,Lab Technician,Male,Bachelor,40000,2,2,2,Yes,Yes
+E011,44,Finance,Manager,Male,Master,88000,15,4,4,No,No
+E012,30,IT,Developer,Female,Bachelor,72000,5,4,3,No,No
+E013,25,Sales,Sales Rep,Male,Bachelor,38000,1,1,1,Yes,Yes
+E014,39,Research,Scientist,Female,PhD,90000,11,4,4,No,No
+E015,33,HR,HR Manager,Male,Master,62000,6,3,3,No,No
+E016,28,Sales,Sales Executive,Female,Bachelor,41000,2,2,2,Yes,Yes
+E017,46,IT,Architect,Male,Master,105000,18,4,4,No,No
+E018,27,Finance,Analyst,Female,Bachelor,52000,3,3,2,Yes,No
+E019,35,Research,Scientist,Male,Master,85000,8,4,3,No,No
+E020,24,Sales,Sales Rep,Female,Bachelor,36000,1,1,1,Yes,Yes
